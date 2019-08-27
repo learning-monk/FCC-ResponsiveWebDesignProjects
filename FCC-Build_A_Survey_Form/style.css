@@ -1,0 +1,104 @@
+h1 {
+  text-align: center;
+}
+
+#description{
+  text-align: center;
+}
+.survey-form {
+  padding: 25px;
+  background: #FFFFE0;
+}
+
+.survey-form .field {
+  padding: 4px;
+  margin: 1px;
+  font-weight: bold;
+
+}
+
+.survey-form .field label {
+  display: inline-block;
+  text-align: right;
+  vertical-align: middle;
+  width: 250px;
+  margin-left: 100px;
+  margin-right: 20px;
+
+}
+
+.survey-form .field input {
+  display: inline-block;
+  width: 400px;
+  height: 25px;
+}
+
+#dropdown{
+  display: inline-block;
+  width: 300px;
+  height: 30px;
+}
+
+.survey-form .field-radio {
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+  width: 250px;
+  margin-left: 100px;
+  margin-right: 20px;
+  font-weight: bold;
+}
+.survey-form input[type="radio"] {
+  float: left;
+  width: 20px;
+  margin-left: 4px;
+}
+
+#select-radio {
+  display: inline-block;
+}
+
+.survey-form .field-check {
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+  width: 250px;
+  margin-left: 100px;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.survey-form input[type=checkbox] + label {
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+
+}
+#select-check {
+  display: inline-block;
+}
+
+.survey-form .field-txtA {
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+  width: 250px;
+  margin-left: 100px;
+  margin-right: 20px;
+  font-weight: bold;
+}
+#txtArea {
+  display: inline-block;
+}
+.survey-form .submitbutton input {
+  display: block;
+  width: 100px;
+  height: 40px;
+  margin: 0 auto;
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: #00FFFF;
+  font-weight: bold;
+}

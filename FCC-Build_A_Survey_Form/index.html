@@ -1,0 +1,126 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+ <body>
+   <h1 id="title">Survey Form</h1>
+   <p id="description">
+     Please fill in the survey form below to understand you better as a developer.</p>
+   <form class="survey-form">
+     <div class="field">
+       <label for="name-label">* Name:</label>
+       <input id="name" type="text"  placeholder="Enter your name" size="50" autofocus required>
+     </div>
+     <br>
+     <div class="field">
+       <label for="email-label">* Email:</label>
+       <input id="email" type="email"  placeholder="Enter your email" size="50" required/>
+     </div>
+     <br>
+     <div class="field">
+       <label for="number-label">* Age:</label>
+       <input id="age" type="number" min="1" max="100" size="50" required/>
+     </div>
+     <br>
+     <div class="field">
+       <label for="Role">What role describes you best:</label>
+       <select id="dropdown">
+         <option value="" disabled selected>Select your role</option>
+         <option value="Student">Student</option>
+         <option value="FullTimeEmployee">Full time employee</option>
+         <option value="Freelancer">Freelancer</option>
+         <option value="Learner">Life long learner</option>
+         <option value="Other">Other</option>
+       </select>
+     </div>
+     <br>
+    <span class="field-radio">* Your Confidence level as a developer: </span>
+     <div id="select-radio">
+     <div>
+       <input type="radio" name="opt" id="level1" value="1" required/>
+       <label for="level1">Expert</label>
+      </div>
+      <div>
+       <input type="radio" name="opt" id="level2" value="2"/>
+       <label for="level2">Proficient</label>
+      </div>
+      <div>
+       <input type="radio" name="opt" id="level3" value="3">
+       <label for="level3">Average</label>
+       </div>
+      <div>
+       <input type="radio" name="opt" id="level4" value="4">
+       <label for="level4">Novice</label>
+       </div>
+      </div>
+      <br><br>
+      <div class="field">
+       <label for="improve">How do you improve yourself?</label>
+       <select id="dropdown">
+         <option value="" disabled selected>Select an option</option>
+         <option value="hackathons">Hackathons</option>
+         <option value="projects">Projects</option>
+         <option value="community">Community</option>
+         <option value="opensource">Open Source</option>
+       </select>
+     </div>
+     <br>
+     <span class="field-check">What are your favorite programming languages?
+         (Check all that apply):</span>
+     <div id="select-check">
+          <div>
+            <input type="checkbox" id="check1" name="mycheck" value="1" />
+            <label for="check1">C</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check2" name="mycheck" value="2" />
+            <label for="check2">C++</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check3" name="mycheck" value="3" />
+            <label for="check3">Java</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check4" name="mycheck" value="4" />
+            <label for="check4">JavaScript</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check5" name="mycheck" value="5" />
+            <label for="check5">Ruby</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check6" name="mycheck" value="6" />
+            <label for="check6">Perl</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check7" name="mycheck" value="7" />
+            <label for="check7">Python</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check8" name="mycheck" value="8" />
+            <label for="check8">Golang</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check9" name="mycheck" value="9" />
+            <label for="check9">Julia</label>
+          </div>
+     </div>
+     <br><br>
+     <span class="field-txtA">
+       <label for="suggestions">What suggestions would you give to new developers?</label>
+     </span>
+       <textarea id='txtArea' rows="5" cols="54" wrap="soft" placeholder="Provide your suggestion here..."></textarea>
+
+     <br><br>
+     <div class="submitbutton">
+     <input type="submit" value="Submit">
+     </div>
+     </form>
+  </body>
+
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Technical Documentation Page of Scala</title>
+<link rel="stylesheet" href="style.css">
+  <body>
+    <nav id="navbar">
+      <ul id="sidebarelements">
+        <header id="docheader">Scala Documentation</header>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#Basics">Basics</a></li>
+        <li><a class="nav-link" href="#unified-types">Unified Types</a></li>
+        <li><a class="nav-link" href="#Classes">Classes</a></li>
+        <li><a class="nav-link" href="#Traits">Traits</a></li>
+        <li><a class="nav-link" href="#">Class Compositions with Mixins</a></li>
+        <li><a class="nav-link" href="#">Higher-order Functions</a></li>
+        <li><a class="nav-link" href="#">Nested Methods</a></li>
+        <li><a class="nav-link" href="#">Multiple Parameter Lists (Currying)</a></li>
+        <li><a class="nav-link" href="#">Case Classes</a></li>
+        <li><a class="nav-link" href="#">Pattern Matching</a></li>
+        <li><a class="nav-link" href="#">Singleton Objects</a></li>
+        <li><a class="nav-link" href="#">Regular Expression Patterns</a></li>
+        <li><a class="nav-link" href="#">Extractor Objects</a></li>
+        <li><a class="nav-link" href="#">For Comprehensions</a></li>
+        <li><a class="nav-link" href="#">Generic Classes</a></li>
+        <li><a class="nav-link" href="#">Variances</a></li>
+      </ul>
+
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section">
+        <header id="Introduction">
+          <h1>Introduction</h1>
+        </header>
+        <h2>What is Scala?</h2>
+        <p>
+          Scala is a modern multi-paradigm programming language designed to express common programming patterns in a concise, elegant, and type-safe way. It smoothly integrates features of object-oriented and functional languages.
+        </p>
+        <h2>Scala is object-oriented</h2>
+        <p>
+          Scala is a pure object-oriented language in the sense that every value is an object. Types and behavior of objects are described by classes and traits. Classes are extended by subclassing and a flexible mixin-based composition mechanism as a clean replacement for multiple inheritance.
+        </p>
+        <h2>Scala is functional</h2>
+        <p>
+          Scala is also a functional language in the sense that every function is a value. Scala provides a lightweight syntax for defining anonymous functions, it supports higher-order functions, it allows functions to be nested, and supports currying. Scala’s case classes and its built-in support for pattern matching model algebraic types used in many functional programming languages. Singleton objects provide a convenient way to group functions that aren’t members of a class.
+        </p>
+        <p>
+          Furthermore, Scala’s notion of pattern matching naturally extends to the processing of XML data with the help of right-ignoring sequence patterns, by way of general extension via extractor objects. In this context, for comprehensions are useful for formulating queries. These features make Scala ideal for developing applications like web services.
+        </p>
+        <h2>Scala is statically typed</h2>
+        <p>
+          Scala is equipped with an expressive type system that enforces statically that abstractions are used in a safe and coherent manner. In particular, the type system supports:
+        </p>
+          <ul>
+            <li>generic classes</li>
+            <li>variance annotations</li>
+            <li>upper and lower type bounds</li>
+            <li>inner classes and abstract types as object members</li>
+            <li>compound types</li>
+            <li>explicitly typed self references</li>
+            <li>polymorphic methods</li>
+          </ul>
+          <p>
+            Type inference means the user is not required to annotate code with redundant type information. In combination, these features provide a powerful basis for the safe reuse of programming abstractions and for the type-safe extension of software.
+          </p>
+          <h2>Scala is extensible</h2>
+          <p>
+            In practice, the development of domain-specific applications often requires domain-specific language extensions. Scala provides a unique combination of language mechanisms that make it easy to smoothly add new language constructs in the form of libraries.
+            In many cases, this can be done without using meta-programming facilities such as macros. For example,
+          </p>
+          <ul>
+            <li>Implicit classes allow adding extension methods to existing types.</li>
+            <li>String interpolation is user-extensible with custom interpolators.</li>
+          </ul>
+          <h2>Scala interoperates</h2>
+          <p>
+            Scala is designed to interoperate well with the popular Java Runtime Environment (JRE). In particular, the interaction with the mainstream object-oriented Java programming language is as smooth as possible. Newer Java features like SAMs, lambdas, annotations, and generics have direct analogues in Scala.
+          </p>
+          <p>
+            Those Scala features without Java analogues, such as default and named parameters, compile as close to Java as they can reasonably come. Scala has the same compilation model (separate compilation, dynamic class loading) like Java and allows access to thousands of existing high-quality libraries.
+          </p>
+      </section>
+      <section class="main-section">
+        <header id="Basics">
+          <h1>Basics</h1>
+        </header>
+        <h2>Trying Scala in the Browser</h2>
+        <p>
+          You can run Scala in your browser with ScalaFiddle.
+        </p>
+        <ol>
+          <li>Go to <a href="https://scalafiddle.io">https://scalafiddle.io</a></li>
+          <li>Paste <code>println("Hello, world!")</code> in the left pane.</li>
+          <li>Hit “Run” button. Output appears in the right pane.</li>
+        </ol>
+        <p>
+          This is an easy, zero-setup way to experiment with pieces of Scala code.
+        </p>
+        <p>
+          Many of the code examples in this documentation are also integrated with ScalaFiddle, so you can directly experiment with them simply by clicking the Run-button.
+        </p>
+        <h2>Expressions</h2>
+        <p>
+          Expressions are computable statements.
+        </p>
+        <blockquote>
+        1 + 1
+        </blockquote>
+        <p>
+          You can output results of expressions using <code>println</code>.
+        </p>
+        <blockquote>
+          println(1) // 1 <br />
+          println(1 + 1) // 2 <br />
+          println("Hello!") // Hello! <br />
+          println("Hello," + " world!") // Hello, world!
+        </blockquote>
+        <h3>Values</h3>
+        <p>
+          You can name results of expressions with the <code>val</code> keyword.
+        </p>
+        <blockquote>
+          val x = 1 + 1 <br />
+          println(x) // 2
+        </blockquote>
+        <p>
+          Named results, such as <code>x</code> here, are called values. Referencing a value does not re-compute it.
+        </p>
+        <p>
+          Values cannot be re-assigned.
+        </p>
+        <blockquote>
+          x = 3 // This does not compile.
+        </blockquote>
+        <p>
+          Types of values can be inferred, but you can also explicitly state the type, like this:
+        </p>
+        <blockquote>
+          val x: Int = 1 + 1
+        </blockquote>
+        <p>
+          Notice how the type declaration <code>Int</code> comes after the identifier <code>x</code> . You also need a <code>:</code> .
+        </p>
+        <h3>Variables</h3>
+        <p>
+          Variables are like values, except you can re-assign them. You can define a variable with the <code>var</code> keyword.
+        </p>
+        <blockquote>
+          var x = 1 + 1 <br />
+          x = 3 // This compiles because "x" is declared with the "var" keyword. <br />
+          println(x * x) // 9
+        </blockquote>
+        <p>
+          As with values, you can explicitly state the type if you want:
+        </p>
+        <blockquote>
+          var x: Int = 1 + 1
+        </blockquote>
+        <h2>Blocks</h2>
+        <p>
+          You can combine expressions by surrounding them with <code>{}</code> . We call this a block.
+        </p>
+        <p>
+          The result of the last expression in the block is the result of the overall block, too.
+        </p>
+        <blockquote>
+          println({ <br />
+            val x = 1 + 1 <br />
+            x + 1 <br />
+          }) // 3
+        </blockquote>
+        <h2>Functions</h2>
+        <p>
+          Functions are expressions that take parameters.
+        </p>
+        <p>
+          You can define an anonymous function (i.e. no name) that returns a given integer plus one:
+        </p>
+        <blockquote>
+          (x: Int) => x + 1
+        </blockquote>
+        <p>
+          On the left of <code>=></code> is a list of parameters. On the right is an expression involving the parameters.
+        </p>
+          <p>
+            You can also name functions.
+          </p>
+        <blockquote>
+          val addOne = (x: Int) => x + 1 <br />
+          println(addOne(1)) // 2
+        </blockquote>
+        <p>
+          Functions may take multiple parameters.
+        </p>
+        <blockquote>
+          val add = (x: Int, y: Int) => x + y <br />
+          println(add(1, 2)) // 3
+        </blockquote>
+        <p>
+          Or it can take no parameters.
+        </p>
+        <blockquote>
+          val getTheAnswer = () => 42 <br />
+          println(getTheAnswer()) // 42
+        </blockquote>
+        <h2>Methods</h2>
+        <p>
+          Methods look and behave very similar to functions, but there are a few key differences between them.
+        </p>
+        <p>
+          Methods are defined with the <code>def</code> keyword. <code>def</code> is followed by a name, parameter lists, a return type, and a body.
+        </p>
+        <blockquote>
+          def add(x: Int, y: Int): Int = x + y <br />
+          println(add(1, 2)) // 3
+        </blockquote>
+        <p>
+          Notice how the return type is declared after the parameter list and a colon <code>:</code> <code>Int</code> .
+        </p>
+        <p>
+          Methods can take multiple parameter lists.
+        </p>
+        <blockquote>
+          def addThenMultiply(x: Int, y: Int)(multiplier: Int): Int = (x + y) * multiplier <br />
+          println(addThenMultiply(1, 2)(3)) // 9
+        </blockquote>
+        <p>
+          Or no parameter lists at all.
+        </p>
+        <blockquote>
+          def name: String = System.getProperty("user.name") <br />
+          println("Hello, " + name + "!")
+        </blockquote>
+        <p>
+          There are some other differences, but for now, you can think of them as something similar to functions.
+        </p>
+        <p>
+          Methods can have multi-line expressions as well.
+        </p>
+        <blockquote>
+          def getSquareString(input: Double): String = { <br />
+            val square = input * input <br />
+            square.toString <br />
+          }
+        </blockquote>
+        <p>
+          The last expression in the body is the method’s return value. (Scala does have a <code>return</code> keyword, but it’s rarely used.)
+        </p>
+      </section>
+      <section class="main-section">
+        <header id="unified-types">
+          <h1>Unified Types</h1>
+        </header>
+        <h2>Scala Type Hierarchy</h2>
+        <p>
+          <code>Any</code> is the supertype of all types, also called the top type. It defines certain universal methods such as <code>equals</code>, <code>hashCode</code>, and <code>toString</code>. <code>Any</code> has two direct subclasses: <code>AnyVal</code> and <code>AnyRef</code>.
+        </p>
+        <p>
+          <code>AnyVal</code> represents value types. There are nine predefined value types and they are non-nullable: <code>Double</code>, <code>Float</code>, <code>Long</code>, <code>Int</code>, <code>Short</code>, <code>Byte</code>, <code>Char</code>, <code>Unit</code>, and <code>Boolean</code>. <code>Unit</code> is a value type which carries no meaningful information. There is exactly one instance of Unit which can be declared literally like so: <code>()</code>. All functions must return something so sometimes <code>Unit</code> is a useful return type.
+        </p>
+        <p>
+          <code>AnyRef</code> represents reference types. All non-value types are defined as reference types. Every user-defined type in Scala is a subtype of <code>AnyRef</code>. If Scala is used in the context of a Java runtime environment, <code>AnyRef</code> corresponds to <code>java.lang.Object</code> .
+        </p>
+        <p>
+          Here is an example that demonstrates that strings, integers, characters, boolean values, and functions are all objects just like every other object:
+        </p>
+        <blockquote>
+          val list: List[Any] = List( <br />
+          "a string", <br />
+          732,  // an integer <br />
+          'c',  // a character <br />
+          true, // a boolean value <br />
+          () => "an anonymous function returning a string" <br />
+        ) <br />
+        list.foreach(element => println(element))
+        </blockquote>
+        <p>
+          It defines a variable <code>list</code> of type <code>List[Any]</code> . The list is initialized with elements of various types, but they all are instance of <code>scala.Any</code> , so you can add them to the list.
+        </p>
+        <p>
+          Here is the output of the program:
+        </p>
+        <blockquote>
+          a string <br />
+          732 <br />
+          c <br />
+          true <br />
+          &ltfunction&gt
+        </blockquote>
+      </section>
+      <section class="main-section">
+        <header id="Classes">
+          <h1>Classes</h1>
+        </header>
+        <p>
+          Classes in Scala are blueprints for creating objects. They can contain methods, values, variables, types, objects, traits, and classes which are collectively called members.
+        </p>
+        <h2>Defining a Class</h2>
+        <p>
+          A minimal class definition is simply the keyword <code>class</code> and an identifier. Class names should be capitalized.
+        </p>
+        <blockquote>
+          class User <br /><br />
+
+          val user1 = new User
+        </blockquote>
+        <p>
+          The keyword <code>new</code> is used to create an instance of the class. <code>User</code> has a default constructor which takes no arguments because no constructor was defined. However, you’ll often want a constructor and class body. Here is an example class definition for a point:
+        </p>
+        <blockquote>
+          class Point(var x: Int, var y: Int) { <br /><br />
+
+            def move(dx: Int, dy: Int): Unit = { <br />
+              x = x + dx <br />
+              y = y + dy <br />
+            } <br /><br />
+
+            override def toString: String = <br />
+              s"($x, $y)" <br />
+          } <br /><br />
+
+          val point1 = new Point(2, 3) <br />
+          point1.x  // 2 <br />
+          println(point1)  // prints (2, 3)
+        </blockquote>
+        <p>
+          This <code>Point</code> class has four members: the variables <code>x</code> and <code>y</code> and the methods <code>move</code> and <code>toString</code> . Unlike many other languages, the primary constructor is in the class signature <code>(var x: Int, var y: Int)</code> . The <code>move</code> method takes two integer arguments and returns the Unit value <code>()</code> , which carries no information. This corresponds roughly with <code>void</code> in Java-like languages. <code>toString</code> , on the other hand, does not take any arguments but returns a <code>String</code> value. Since <code>toString</code> overrides <code>toString</code> from <code>AnyRef</code> , it is tagged with the <code>override</code> keyword.
+        </p>
+        <h2>Constructors</h2>
+        <p>
+          Constructors can have optional parameters by providing a default value like so:
+        </p>
+        <blockquote>
+          class Point(var x: Int = 0, var y: Int = 0) <br /><br />
+
+          val origin = new Point  // x and y are both set to 0 <br />
+          val point1 = new Point(1) <br />
+          println(point1.x)  // prints 1
+        </blockquote>
+        <p>
+          In this version of the <code>Point</code> class, <code>x</code> and <code>y</code> have the default value <code>0</code> so no arguments are required. However, because the constructor reads arguments left to right, if you just wanted to pass in a <code>y</code> value, you would need to name the parameter.
+        </p>
+        <p>
+          This is also a good practice to enhance clarity.
+        </p>
+      </section>
+      <section class="main-section">
+        <header id="Traits">
+          <h1>Traits</h1>
+        </header>
+        <p>
+          A minimal trait is simply the keyword <code>trait</code> and an identifier:
+        </p>
+        <blockquote>
+          trait HairColor
+        </blockquote>
+        <p>
+          Traits become especially useful as generic types and with abstract methods.
+        </p>
+        <blockquote>
+          trait Iterator[A] { <br />
+            def hasNext: Boolean <br />
+            def next(): A <br />
+          }
+        </blockquote>
+        <p>
+          Extending the <code>trait Iterator[A]</code> requires a type <code>A</code> and implementations of the methods <code>hasNext</code> and <code>next</code> .
+        </p>
+        <h2>Using traits</h2>
+        <p>
+          Use the <code>extends</code> keyword to extend a trait. Then implement any abstract members of the trait using the <code>override</code> keyword:
+        </p>
+        <blockquote>
+          trait Iterator[A] { <br />
+            def hasNext: Boolean <br />
+            def next(): A <br />
+          } <br /><br />
+
+          class IntIterator(to: Int) extends Iterator[Int] { <br />
+            private var current = 0 <br />
+            override def hasNext: Boolean = current < to <br />
+            override def next(): Int =  { <br />
+              if (hasNext) { <br />
+                val t = current <br />
+                current += 1 <br />
+                t <br />
+              } else 0 <br />
+            } <br />
+          } <br /><br /><br />
+
+
+          val iterator = new IntIterator(10) <br />
+          iterator.next()  // returns 0 <br />
+          iterator.next()  // returns 1
+        </blockquote>
+        <p>
+          This <code>IntIterator</code> class takes a parameter <code>to</code> as an upper bound. It <code>extends</code> <code>Iterator[Int]</code> which means that the <code>next</code> method must return an Int.
+        </p>
+      </section>
+    </main>
+
+    </body>
+  </head>
+
+</html>

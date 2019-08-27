@@ -1,0 +1,22 @@
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background: lightgrey;
+}
+
+.textalignment {
+  text-align:center;
+}
+
+.img-circle{
+  border-radius: 50%
+}
+
+.pull-right {
+  float: right;
+}
+
+.leftalignment{
+  text-align:left;
+}
